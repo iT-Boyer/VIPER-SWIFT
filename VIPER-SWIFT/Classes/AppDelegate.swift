@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let appDependencies = AppDependencies()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        appDependencies.installRootViewControllerIntoWindow(window!)
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        appDependencies.installRootViewControllerIntoWindow(window: window!)
         
         return true
     }

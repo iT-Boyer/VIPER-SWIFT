@@ -16,7 +16,7 @@ class ListViewController : UITableViewController, ListViewInterface {
     var dataProperty : UpcomingDisplayData?
     var strongTableView : UITableView?
     
-    @IBOutlet var noContentView : UIView
+    @IBOutlet var noContentView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ListViewController : UITableViewController, ListViewInterface {
         configureView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         eventHandler?.updateView()
@@ -34,7 +34,7 @@ class ListViewController : UITableViewController, ListViewInterface {
     func configureView() {
         navigationItem.title = "VIPER TODO"
         
-        let addItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: Selector("didTapAddButton"))
+        let addItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: Selector("didTapAddButton"))
         
         navigationItem.rightBarButtonItem = addItem
     }
@@ -58,7 +58,7 @@ class ListViewController : UITableViewController, ListViewInterface {
         tableView.reloadData()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int  {
         var numberOfSections = dataProperty?.sections.count
         
         if dataProperty?.sections.count == nil {
@@ -68,26 +68,27 @@ class ListViewController : UITableViewController, ListViewInterface {
         return numberOfSections!
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let upcomingSection = dataProperty?.sections[section]
         return upcomingSection!.items.count
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let upcomingSection = dataProperty?.sections[section]
         return upcomingSection!.name
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let upcomingSection = dataProperty?.sections[indexPath.section]
         let upcomingItem = upcomingSection!.items[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(ListEntryCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        
-        cell.textLabel.text = upcomingItem.title;
-        cell.detailTextLabel.text = upcomingItem.dueDate;
-        cell.imageView.image = UIImage(named: upcomingSection!.imageName)
-        cell.selectionStyle = UITableViewCellSelectionStyle.None;
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListEntryCellIdentifier, for: indexPath as IndexPath) as UITableViewCell
+
+        cell.textLabel!.text = upcomingItem.title;
+        cell.detailTextLabel!.text = upcomingItem.dueDate;
+        cell.imageView!.image = UIImage(named: upcomingSection!.imageName)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none;
 
         return cell
     }

@@ -19,12 +19,12 @@ class AddPresenter : NSObject, AddModuleInterface {
     }
     
     func saveAddActionWithName(name: NSString, dueDate: NSDate) {
-        addInteractor?.saveNewEntryWithName(name, dueDate: dueDate);
+        addInteractor?.saveNewEntryWithName(name: name, dueDate: dueDate);
         addWireframe?.dismissAddInterface()
         addModuleDelegate?.addModuleDidSaveAddAction()
     }
     
     func configureUserInterfaceForPresentation(addViewUserInterface: AddViewInterface) {
-        addViewUserInterface.setMinimumDueDate(NSDate())
+        addViewUserInterface.setMinimumDueDate(date: NSDate())
     }
 }

@@ -10,11 +10,11 @@ import Foundation
 import CoreData
 
 extension Array {
-    func lastObject() -> T {
+    func lastObject() -> AnyObject {
         let endIndex = self.endIndex
         let lastItemIndex = endIndex - 1
         
-        return self[lastItemIndex]
+        return self[lastItemIndex] as AnyObject
     }
 }
 
@@ -23,44 +23,44 @@ class CoreDataStore : NSObject {
     var managedObjectModel : NSManagedObjectModel?
     var managedObjectContext : NSManagedObjectContext?
     
-    init() {
-        managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)
+    override init() {
+        managedObjectModel = NSManagedObjectModel.mergedModel(from: nil)
         
-        persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
         
-        let domains = NSSearchPathDomainMask.UserDomainMask
-        let directory = NSSearchPathDirectory.DocumentDirectory
+        let domains = FileManager.SearchPathDomainMask.userDomainMask
+        let directory = FileManager.SearchPathDirectory.documentDirectory
         
         let error = NSError()
-        let applicationDocumentsDirectory : AnyObject = NSFileManager.defaultManager().URLsForDirectory(directory, inDomains: domains).lastObject()
+        let applicationDocumentsDirectory : AnyObject = FileManager.default.urls(for: directory, in: domains).lastObject()
         let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true]
         
-        let storeURL = applicationDocumentsDirectory.URLByAppendingPathComponent("VIPER-SWIFT.sqlite")
+        let storeURL = applicationDocumentsDirectory.appendingPathComponent("VIPER-SWIFT.sqlite")
         
         persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: "", URL: storeURL, options: options, error: nil)
 
-        managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+        managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
         managedObjectContext!.persistentStoreCoordinator = persistentStoreCoordinator
         managedObjectContext!.undoManager = nil
         
         super.init()
     }
     
-    func fetchEntriesWithPredicate(predicate: NSPredicate, sortDescriptors: AnyObject[], completionBlock: ((ManagedTodoItem[]) -> Void)!) {
-        let fetchRequest = NSFetchRequest(entityName: "TodoItem")
+    func fetchEntriesWithPredicate(predicate: NSPredicate, sortDescriptors: [AnyObject], completionBlock: (([ManagedTodoItem]) -> Void)!) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoItem")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = []
         
-        managedObjectContext?.performBlock {
+        managedObjectContext?.perform {
             let queryResults = self.managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
-            let managedResults = queryResults! as ManagedTodoItem[]
+            let managedResults = queryResults! as [ManagedTodoItem]
             completionBlock(managedResults)
         }
     }
     
     func newTodoItem() -> ManagedTodoItem {
-        let entityDescription = NSEntityDescription.entityForName("TodoItem", inManagedObjectContext: managedObjectContext)
-        let newEntry = NSManagedObject(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext) as ManagedTodoItem
+        let entityDescription = NSEntityDescription.entity(forEntityName: "TodoItem", in: managedObjectContext!)
+        let newEntry = NSManagedObject(entity: entityDescription!, insertInto: managedObjectContext) as! ManagedTodoItem
         
         return newEntry
     }

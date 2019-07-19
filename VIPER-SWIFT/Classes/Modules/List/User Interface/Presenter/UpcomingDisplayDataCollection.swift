@@ -9,37 +9,37 @@
 import Foundation
 
 class UpcomingDisplayDataCollection {
-    let dayFormatter = NSDateFormatter()
-    var sections : Dictionary<NearTermDateRelation, UpcomingDisplayItem[]> = Dictionary()
+    let dayFormatter = DateFormatter()
+    var sections : Dictionary<NearTermDateRelation, [UpcomingDisplayItem]> = Dictionary()
     
     init() {
-        dayFormatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("EEEE", options: 0, locale: NSLocale.autoupdatingCurrentLocale())
+        dayFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "EEEE", options: 0, locale: NSLocale.autoupdatingCurrent)
     }
     
-    func addUpcomingItems(upcomingItems: UpcomingItem[]) {
+    func addUpcomingItems(upcomingItems: [UpcomingItem]) {
         for upcomingItem in upcomingItems {
-            addUpcomingItem(upcomingItem)
+            addUpcomingItem(upcomingItem: upcomingItem)
         }
     }
     
     func addUpcomingItem(upcomingItem: UpcomingItem) {
-        var displayItem = displayItemForUpcomingItem(upcomingItem)
-        addDisplayItem(displayItem, dateRelation: upcomingItem.dateRelation)
+        var displayItem = displayItemForUpcomingItem(upcomingItem: upcomingItem)
+        addDisplayItem(displayItem: displayItem, dateRelation: upcomingItem.dateRelation)
     }
     
     func addDisplayItem(displayItem: UpcomingDisplayItem, dateRelation: NearTermDateRelation) {
-        if var realSection : UpcomingDisplayItem[] = sections[dateRelation] {
+        if var realSection : [UpcomingDisplayItem] = sections[dateRelation] {
             realSection.append(displayItem)
             sections[dateRelation] = realSection
         } else {
-            var newSection : UpcomingDisplayItem[] = []
+            var newSection : [UpcomingDisplayItem] = []
             newSection.append(displayItem)
             sections[dateRelation] = newSection
         }
     }
     
     func displayItemForUpcomingItem(upcomingItem: UpcomingItem) -> UpcomingDisplayItem {
-        let day = formattedDay(upcomingItem.dueDate, dateRelation: upcomingItem.dateRelation)
+        let day = formattedDay(date: upcomingItem.dueDate, dateRelation: upcomingItem.dateRelation)
         let displayItem = UpcomingDisplayItem(title: upcomingItem.title, dueDate: day)
         return displayItem
     }
@@ -49,44 +49,44 @@ class UpcomingDisplayDataCollection {
             return ""
         }
         
-        return dayFormatter.stringFromDate(date)
+        return dayFormatter.string(from: date as Date)
     }
     
     func collectedDisplayData() -> UpcomingDisplayData {
-        let collectedSections : UpcomingDisplaySection[] = sortedUpcomingDisplaySections()
+        let collectedSections : [UpcomingDisplaySection] = sortedUpcomingDisplaySections()
         return UpcomingDisplayData(sections: collectedSections)
     }
     
     func displaySectionForDateRelation(dateRelation: NearTermDateRelation) -> UpcomingDisplaySection {
-        let sectionTitle = sectionTitleForDateRelation(dateRelation)
-        let imageName = sectionImageNameForDateRelation(dateRelation)
+        let sectionTitle = sectionTitleForDateRelation(dateRelation: dateRelation)
+        let imageName = sectionImageNameForDateRelation(dateRelation: dateRelation)
         let items = sections[dateRelation]
         
         return UpcomingDisplaySection(name: sectionTitle, imageName: imageName, items: items)
     }
     
-    func sortedUpcomingDisplaySections() -> UpcomingDisplaySection[] {
+    func sortedUpcomingDisplaySections() -> [UpcomingDisplaySection] {
         let keys = sortedNearTermDateRelations()
-        var displaySections : UpcomingDisplaySection[] = []
+        var displaySections : [UpcomingDisplaySection] = []
         
         for dateRelation in keys {
             var itemArray = sections[dateRelation]
             
-            if itemArray {
-                var displaySection = displaySectionForDateRelation(dateRelation)
-                displaySections.insert(displaySection, atIndex: displaySections.endIndex)
+            if (itemArray != nil) {
+                var displaySection = displaySectionForDateRelation(dateRelation: dateRelation)
+                displaySections.insert(displaySection, at: displaySections.endIndex)
             }
         }
         
         return displaySections
     }
     
-    func sortedNearTermDateRelations() -> NearTermDateRelation[] {
-        var array : NearTermDateRelation[] = []
-        array.insert(NearTermDateRelation.Today, atIndex: 0)
-        array.insert(NearTermDateRelation.Tomorrow, atIndex: 1)
-        array.insert(NearTermDateRelation.LaterThisWeek, atIndex: 2)
-        array.insert(NearTermDateRelation.NextWeek, atIndex: 3)
+    func sortedNearTermDateRelations() -> [NearTermDateRelation] {
+        var array : [NearTermDateRelation] = []
+        array.insert(NearTermDateRelation.Today, at: 0)
+        array.insert(NearTermDateRelation.Tomorrow, at: 1)
+        array.insert(NearTermDateRelation.LaterThisWeek, at: 2)
+        array.insert(NearTermDateRelation.NextWeek, at: 3)
         return array
     }
     

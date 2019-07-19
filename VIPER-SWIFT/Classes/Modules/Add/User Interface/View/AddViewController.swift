@@ -12,14 +12,14 @@ import UIKit
 class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface {
     var eventHandler : AddModuleInterface?
 
-    @IBOutlet var nameTextField : UITextField
+    @IBOutlet var nameTextField : UITextField!
     @IBOutlet var datePicker : UIDatePicker?
     
     var minimumDate : NSDate = NSDate()
     var transitioningBackgroundView : UIView = UIView()
     
     @IBAction func save(sender: AnyObject) {
-        eventHandler?.saveAddActionWithName(nameTextField.text, dueDate: datePicker!.date)
+        eventHandler?.saveAddActionWithName(name: nameTextField!.text as! NSString, dueDate: datePicker!.date as NSDate)
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -27,22 +27,22 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
         eventHandler?.cancelAddAction()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         var gestureRecognizer = UITapGestureRecognizer()
         gestureRecognizer.addTarget(self, action: Selector("dismiss"))
         
-        transitioningBackgroundView.userInteractionEnabled = true
+        transitioningBackgroundView.isUserInteractionEnabled = true
         
         nameTextField.becomeFirstResponder()
         
         if let realDatePicker = datePicker {
-            realDatePicker.minimumDate = minimumDate
+            realDatePicker.minimumDate = minimumDate as Date
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         nameTextField.resignFirstResponder()
@@ -53,12 +53,12 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
     }
     
     func setEntryName(name: NSString) {
-        nameTextField.text = name
+        nameTextField.text = name as String
     }
     
     func setEntryDueDate(date: NSDate) {
         if let realDatePicker = datePicker {
-            realDatePicker.minimumDate = date
+            realDatePicker.minimumDate = date as Date
         }
     }
     
@@ -66,7 +66,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
         minimumDate = date
         
         if let realDatePicker = datePicker {
-            realDatePicker.minimumDate = date
+            realDatePicker.minimumDate = date as Date
         }
     }
     
