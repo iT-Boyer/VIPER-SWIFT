@@ -44,12 +44,12 @@ class UpcomingDisplayDataCollection {
         return displayItem
     }
     
-    func formattedDay(date: NSDate, dateRelation: NearTermDateRelation) -> String {
+    func formattedDay(date: Date, dateRelation: NearTermDateRelation) -> String {
         if dateRelation == NearTermDateRelation.Today {
             return ""
         }
         
-        return dayFormatter.string(from: date as Date)
+        return dayFormatter.string(from: date)
     }
     
     func collectedDisplayData() -> UpcomingDisplayData {
@@ -83,10 +83,10 @@ class UpcomingDisplayDataCollection {
     
     func sortedNearTermDateRelations() -> [NearTermDateRelation] {
         var array : [NearTermDateRelation] = []
-        array.insert(NearTermDateRelation.Today, at: 0)
-        array.insert(NearTermDateRelation.Tomorrow, at: 1)
-        array.insert(NearTermDateRelation.LaterThisWeek, at: 2)
-        array.insert(NearTermDateRelation.NextWeek, at: 3)
+        array.insert(.Today, at: 0)
+        array.insert(.Tomorrow, at: 1)
+        array.insert(.LaterThisWeek, at: 2)
+        array.insert(.NextWeek, at: 3)
         return array
     }
     

@@ -10,8 +10,8 @@
 import Foundation
 
 struct UpcomingDisplaySection : Equatable {
-    let name : String = ""
-    let imageName : String = ""
+    var name : String = ""
+    var imageName : String = ""
     var items : [UpcomingDisplayItem] = []
     
     init(name: String, imageName: String, items: [UpcomingDisplayItem]?) {
@@ -20,7 +20,7 @@ struct UpcomingDisplaySection : Equatable {
         
         if (items != nil) {
             self.items = items!
-            self.items.unshare()
+//            self.items.unshare()
         }
     }
 }

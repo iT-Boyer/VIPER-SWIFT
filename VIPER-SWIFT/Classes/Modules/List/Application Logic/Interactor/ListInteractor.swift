@@ -21,13 +21,13 @@ class ListInteractor : NSObject, ListInteractorInput {
     
     func findUpcomingItems() {
         let today = clock.today()
-        let endOfNextWeek = NSCalendar.currentCalendar.dateForEndOfFollowingWeekWithDate(today)
+        let endOfNextWeek = Calendar.current.dateForEndOfFollowingWeekWithDate(today)
         
         dataManager.todoItemsBetweenStartDate(today,
             endDate: endOfNextWeek,
             completion: { todoItems in
-                let upcomingItems = self.upcomingItemsFromToDoItems(todoItems)
-                self.output?.foundUpcomingItems(upcomingItems)
+                let upcomingItems = self.upcomingItemsFromToDoItems(todoItems: todoItems)
+                self.output?.foundUpcomingItems(upcomingItems: upcomingItems)
         })
     }
     
@@ -39,7 +39,7 @@ class ListInteractor : NSObject, ListInteractorInput {
         for todoItem in todoItems {
             var dateRelation = calendar.nearTermRelationForDate(todoItem.dueDate, relativeToToday: clock.today())
             let upcomingItem = UpcomingItem(title: todoItem.name, dueDate: todoItem.dueDate, dateRelation: dateRelation)
-            upcomingItems.insert(upcomingItem, atIndex: upcomingItems.endIndex)
+            upcomingItems.insert(upcomingItem, at: upcomingItems.endIndex)
         }
         
         return upcomingItems

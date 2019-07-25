@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct UpcomingDisplayItem : Equatable, Printable {
-    let title : String = ""
-    let dueDate : String = ""
+struct UpcomingDisplayItem : Equatable {
+    var title : String = ""
+    var dueDate : String = ""
     
     var description : String { get {
         return "\(title) -- \(dueDate)"

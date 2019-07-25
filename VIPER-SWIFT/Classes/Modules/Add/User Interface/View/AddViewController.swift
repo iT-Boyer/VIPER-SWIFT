@@ -15,11 +15,11 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
     @IBOutlet var nameTextField : UITextField!
     @IBOutlet var datePicker : UIDatePicker?
     
-    var minimumDate : NSDate = NSDate()
+    var minimumDate : Date = Date()
     var transitioningBackgroundView : UIView = UIView()
     
     @IBAction func save(sender: AnyObject) {
-        eventHandler?.saveAddActionWithName(name: nameTextField!.text as! NSString, dueDate: datePicker!.date as NSDate)
+        eventHandler?.saveAddActionWithName(name: nameTextField!.text as! NSString, dueDate: datePicker!.date)
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -56,17 +56,17 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
         nameTextField.text = name as String
     }
     
-    func setEntryDueDate(date: NSDate) {
+    func setEntryDueDate(date: Date) {
         if let realDatePicker = datePicker {
-            realDatePicker.minimumDate = date as Date
+            realDatePicker.minimumDate = date
         }
     }
     
-    func setMinimumDueDate(date: NSDate) {
+    func setMinimumDueDate(date: Date) {
         minimumDate = date
         
         if let realDatePicker = datePicker {
-            realDatePicker.minimumDate = date as Date
+            realDatePicker.minimumDate = date
         }
     }
     

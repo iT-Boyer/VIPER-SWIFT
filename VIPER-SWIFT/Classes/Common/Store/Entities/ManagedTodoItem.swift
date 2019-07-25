@@ -11,5 +11,5 @@ import CoreData
 
 class ManagedTodoItem : NSManagedObject {
     @NSManaged var name : NSString
-    @NSManaged var date : NSDate
+    @NSManaged var date : Date
 }

@@ -9,10 +9,10 @@
 import Foundation
 
 struct TodoItem {
-    let dueDate : NSDate
+    let dueDate : Date
     let name : String
     
-    init(dueDate: NSDate, name: String) {
+    init(dueDate: Date, name: String) {
         self.dueDate = dueDate
         self.name = name
     }
