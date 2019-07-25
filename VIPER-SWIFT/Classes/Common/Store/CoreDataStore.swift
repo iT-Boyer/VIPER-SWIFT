@@ -32,12 +32,12 @@ class CoreDataStore : NSObject {
         let directory = FileManager.SearchPathDirectory.documentDirectory
         
         let error = NSError()
-        let applicationDocumentsDirectory : AnyObject = FileManager.default.urls(for: directory, in: domains).lastObject()
+        let applicationDocumentsDirectory:URL = FileManager.default.urls(for: directory, in: domains).lastObject() as! URL
         let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true]
         
         let storeURL = applicationDocumentsDirectory.appendingPathComponent("VIPER-SWIFT.sqlite")
         
-        persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: "", URL: storeURL, options: options, error: nil)
+        try? persistentStoreCoordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: "", at:  storeURL, options: options)
 
         managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
         managedObjectContext!.persistentStoreCoordinator = persistentStoreCoordinator
@@ -52,8 +52,9 @@ class CoreDataStore : NSObject {
         fetchRequest.sortDescriptors = []
         
         managedObjectContext?.perform {
-            let queryResults = self.managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
-            let managedResults = queryResults! as [ManagedTodoItem]
+            //executeFetchRequest(fetchRequest, error: Optional.none)
+            let queryResults = try? self.managedObjectContext?.fetch(fetchRequest)
+            let managedResults = queryResults! as! [ManagedTodoItem]
             completionBlock(managedResults)
         }
     }
@@ -66,6 +67,8 @@ class CoreDataStore : NSObject {
     }
     
     func save() {
-        managedObjectContext?.save(nil)
+        //save(Optional.none)
+        try? managedObjectContext?.save()
+        
     }
 }
