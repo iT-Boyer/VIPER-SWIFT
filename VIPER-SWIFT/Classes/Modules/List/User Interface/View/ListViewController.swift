@@ -20,7 +20,7 @@ class ListViewController : UITableViewController, ListViewInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         strongTableView = tableView
         configureView()
     }
@@ -39,7 +39,7 @@ class ListViewController : UITableViewController, ListViewInterface {
         navigationItem.rightBarButtonItem = addItem
     }
     
-    func didTapAddButton () {
+    @objc func didTapAddButton () {
         eventHandler?.addNewEntry()
     }
     
