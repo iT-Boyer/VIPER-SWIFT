@@ -1,0 +1,10 @@
+author: iTBoyer
+author_url: http://huos3203.github.io
+github_url: https://github.com/huos3203/VIPER-SWIFT
+root_url: https://github.com/huos3203/VIPER-SWIFT
+output: docs
+theme: fullwidth
+min_acl: internal
+sdk: iphone
+module_version: 1.0.0
+xcodebuild_arguments: [-project,'VIPER-SWIFT.xcodeproj', -scheme, 'VIPER-SWIFT',USE_SWIFT_RESPONSE_FILE=NO]
