@@ -1,0 +1,113 @@
+@startuml
+page 1x1
+title 
+VIPER设计模式
+创建时间：2019-07-25 19:27:00+0800 
+endtitle
+left header
+通过TODO案例APP梳理类图,充分理解VIPER相关设计模式
+endheader
+class "VTDAppDependencies" as VTDAppDependencies {
+    --属性组 --
+    __ 函数组__
+    - (void)configureDependencies
+    + (void)installRootViewControllerIntoWindow:(UIWindow *)window;
+}
+add o-up-> VTDAppDependencies
+list o-up-> VTDAppDependencies
+package "TODO清单" as list{
+}
+package "新建TODO" as add {
+    package "Application Logic应用逻辑" as logic{
+            
+            package "Interactor交互器" as Interactor {
+                class "AddInteractor" as AddInteractor{
+                    --属性组 --
+                    + VTDAddDataManager *addDataManager;
+                    __ 函数组__
+                    - (void)saveNewEntryWithName:dueDate:
+                }
+            }
+            'package，node，folder，frame，cloud，database'
+            package "持久化工具器" as Manager{
+                class "AddDataManager" {
+                    --属性组 --
+                    + VTDCoreDataStore *dataStore;
+                    __ 函数组__
+                    - (void)addNewEntry:(VTDTodoItem *)entry;
+                }
+            }
+            AddInteractor ..> AddDataManager
+    }
+    package "实体 (Entity)模型协议" as Models{
+     interface "VTDAddModuleDelegate"{
+        __ 函数组__
+        - (void)addModuleDidCancelAddAction;
+        - (void)addModuleDidSaveAddAction;
+     }
+     interface "VTDAddModuleInterface"{
+         __ 函数组__
+        - (void)cancelAddAction;
+        - (void)saveAddActionWithName:dueDate:
+     }
+    }
+    package "User Interface" as userIn {
+        package "Presenter展示器" as Presenter{
+         class "VTDAddPresenter" as VTDAddPresenter {
+                --属性组 --
+                 VTDAddInteractor *addInteractor;
+                 VTDAddWireframe *addWireframe;
+                 id<VTDAddModuleDelegate> addModuleDelegate;
+                __函数组__
+                - (void)configureUserInterfaceForPresentation:
+            }
+            VTDAddModuleInterface o-- VTDAddPresenter
+            VTDAddModuleDelegate *-up-> VTDAddPresenter
+            AddInteractor *-up-> VTDAddPresenter
+        }
+        package "转场" as Transition{
+                class "VTDAddDismissalTransition" as VTDAddDismissalTransition {
+                    - (NSTimeInterval)transitionDuration:
+                    - (void)animateTransition:
+                }
+                class "VTDAddPresentationTransition" as VTDAddPresentationTransition {
+                
+                    - (NSTimeInterval)transitionDuration:
+                    - (void)animateTransition:
+                }
+        }
+        package "View视图" as View{
+                class "VTDAddViewController" as  VTDAddViewController{
+                    --属性组 --
+                    + id<VTDAddModuleInterface> eventHandler;
+                    + UIView *transitioningBackgroundView;
+                }
+                 
+                interface "VTDAddViewInterface" as VTDAddViewInterface{
+                    __ 函数组 __
+                    + (void)setEntryName:(NSString *)name;
+                    + (void)setEntryDueDate:(NSDate *)date;
+                    + (void)setMinimumDueDate:(NSDate *)date; 
+                }
+                VTDAddViewInterface o-up- VTDAddViewController
+                VTDAddModuleInterface *----> VTDAddViewController
+        } 
+         
+        package "路由线框:Wireframe" as Wireframe{
+            class "VTDAddWireframe"{
+                -- 属性组 --
+                + VTDAddPresenter *addPresenter;
+                __ 函数组 __
+                + (void)presentAddInterfaceFromViewController:
+                + (void)dismissAddInterface
+            }
+            VTDAddWireframe ..> Transition
+            VTDAddWireframe *-up-> VTDAddPresenter
+            VTDAddViewController *-> VTDAddWireframe:eventHandler = self.addPresenter < 
+        }
+    }
+    
+}
+
+
+@enduml
