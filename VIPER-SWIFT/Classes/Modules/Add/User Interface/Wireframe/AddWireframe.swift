@@ -19,7 +19,7 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
     func presentAddInterfaceFromViewController(viewController: UIViewController) {
         let newViewController = addViewController()
         newViewController.eventHandler = addPresenter
-        newViewController.modalPresentationStyle = .custom
+        newViewController.modalPresentationStyle = .pageSheet
         newViewController.transitioningDelegate = self
         
         addPresenter?.configureUserInterfaceForPresentation(addViewUserInterface: newViewController)

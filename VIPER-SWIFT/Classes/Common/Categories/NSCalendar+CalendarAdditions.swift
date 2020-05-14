@@ -66,10 +66,11 @@ extension Calendar{
     //components(NSCalendarUnit.WeekdayCalendarUnit, fromDate: date)
     //rangeOfUnit(NSCalendarUnit.WeekdayCalendarUnit, inUnit: NSCalendarUnit.WeekCalendarUnit, forDate: date)
     func daysRemainingInWeekWithDate(date: Date) -> Int {
-        let weekdayComponent = component(Calendar.Component.weekday, from: date)
-        let daysRange = range(of: .weekday, in: .weekday, for: date)
-        let daysPerWeek = daysRange!.count
-        let daysRemaining = daysPerWeek - weekdayComponent
+        let weekdayComponent = dateComponents([.weekday], from: date)
+        // https://stackoverflow.com/questions/52658744/swift-4-init-is-deprecated-countablerange-is-now-range
+        let daysRange = range(of: Component.weekday, in: Component.weekOfYear, for: date)!
+        let daysPerWeek = daysRange.count
+        let daysRemaining = daysPerWeek - weekdayComponent.weekday!
         return daysRemaining
     }
     func isDate(_ date: Date, beforeYearMonthDay: Date) -> Bool {
