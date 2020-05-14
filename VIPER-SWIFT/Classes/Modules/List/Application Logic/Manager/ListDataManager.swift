@@ -18,9 +18,10 @@ class ListDataManager : NSObject {
         let end = calendar.dateForEndOfDay(endDate) as NSDate
         
         let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", beginning, end)
-        let sortDescriptors = [AnyObject]()
+//        let sortDescriptors = [AnyObject]()
+        let sortDescriptors: [NSSortDescriptor] = []
         
-        coreDataStore?.fetchEntriesWithPredicate(predicate: predicate,
+        coreDataStore?.fetchEntriesWithPredicate(predicate,
                                                  sortDescriptors: sortDescriptors,
             completionBlock: { entries in
                 let todoItems = self.todoItemsFromDataStoreEntries(entries: entries)

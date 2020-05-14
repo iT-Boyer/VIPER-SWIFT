@@ -9,13 +9,13 @@
 import Foundation
 
 class AddDataManager : NSObject {
-    var dataStore : CoreDataStore?
+    var dataStore : CoreDataStore!
     
     func addNewEntry(entry: TodoItem) {
-        let newEntry = dataStore!.newTodoItem() //dataStore?.newTodoItem() as! ManagedTodoItem
-        newEntry.name = entry.name as NSString
+        let newEntry = dataStore.newTodoItem()
+        newEntry.name = entry.name
         newEntry.date = entry.dueDate
         
-        dataStore?.save()
+        dataStore.save()
     }
 }

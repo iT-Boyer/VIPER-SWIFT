@@ -19,7 +19,7 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
     func presentAddInterfaceFromViewController(viewController: UIViewController) {
         let newViewController = addViewController()
         newViewController.eventHandler = addPresenter
-        newViewController.modalPresentationStyle = .pageSheet
+        newViewController.modalPresentationStyle = .custom
         newViewController.transitioningDelegate = self
         
         addPresenter?.configureUserInterfaceForPresentation(addViewUserInterface: newViewController)
@@ -44,11 +44,11 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
         return storyboard
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AddDismissalTransition()
     }
     
-   func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AddPresentationTransition()
     }
 }

@@ -18,11 +18,11 @@ class AddViewController: UIViewController, UITextFieldDelegate, AddViewInterface
     var minimumDate : Date = Date()
     var transitioningBackgroundView : UIView = UIView()
     
-    @IBAction func save(sender: AnyObject) {
+    @IBAction func save(_ sender: AnyObject) {
         eventHandler?.saveAddActionWithName(name: nameTextField!.text as! NSString, dueDate: datePicker!.date)
     }
     
-    @IBAction func cancel(sender: AnyObject) {
+    @IBAction func cancel(_ sender: AnyObject) {
         nameTextField.resignFirstResponder()
         eventHandler?.cancelAddAction()
     }

@@ -11,9 +11,4 @@ import Foundation
 struct TodoItem {
     let dueDate : Date
     let name : String
-    
-    init(dueDate: Date, name: String) {
-        self.dueDate = dueDate
-        self.name = name
-    }
 }
