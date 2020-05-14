@@ -62,8 +62,8 @@
 		26D96FB019429AD000F117F5 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18319414A720029F589 /* CoreDataStore.swift */; };
 		26D96FB119429B1A00F117F5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18119414A720029F589 /* TodoItem.swift */; };
 		26D96FB219429B1A00F117F5 /* ListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A819414A720029F589 /* ListDataManager.swift */; };
-		5157D7FB77D78448D161EAAB /* Pods_VIPER_SWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */; };
 		80F01893A273341801A150C0 /* Pods_VIPER_SWIFTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29120966E805CF2DBBCB49C /* Pods_VIPER_SWIFTTests.framework */; };
+		F9A1F8FE246D05070005DF55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A1F8FD246D05070005DF55 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +127,8 @@
 		7F668389A88E34EA3CDEE2CB /* Pods-VIPER-SWIFT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-SWIFT.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-SWIFT/Pods-VIPER-SWIFT.debug.xcconfig"; sourceTree = "<group>"; };
 		84A75BB6231F852C009D8EF7 /* VIPER.jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = VIPER.jazzy.yaml; sourceTree = "<group>"; };
 		C29120966E805CF2DBBCB49C /* Pods_VIPER_SWIFTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_SWIFTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A1F8FD246D05070005DF55 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F9A1F8FF246D07C80005DF55 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5157D7FB77D78448D161EAAB /* Pods_VIPER_SWIFT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +153,7 @@
 		261FA1451941497E0029F589 = {
 			isa = PBXGroup;
 			children = (
+				F9A1F8FF246D07C80005DF55 /* README.md */,
 				84A75BB6231F852C009D8EF7 /* VIPER.jazzy.yaml */,
 				261FA1501941497E0029F589 /* VIPER-SWIFT */,
 				261FA1631941497E0029F589 /* VIPER-SWIFTTests */,
@@ -477,6 +479,7 @@
 			children = (
 				261FA1EA1942320E0029F589 /* Main.storyboard */,
 				261FA1ED194232180029F589 /* Images.xcassets */,
+				F9A1F8FD246D05070005DF55 /* Launch Screen.storyboard */,
 			);
 			name = Resources;
 			path = "../../../../Documents/Repos/VIPER-TODO-SWIFT/viper-todo-swift/VIPER TODO/Resources";
@@ -596,6 +599,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A1F8FE246D05070005DF55 /* Launch Screen.storyboard in Resources */,
 				261FA1EE194232180029F589 /* Images.xcassets in Resources */,
 				261FA1EC1942320E0029F589 /* Main.storyboard in Resources */,
 			);
@@ -850,6 +854,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2C4H9T5RF5;
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jinher.VIPER-SWIFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -865,6 +870,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2C4H9T5RF5;
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jinher.VIPER-SWIFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
