@@ -37,8 +37,7 @@ extension Calendar{
     //components((NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay), fromDate: date)
     //dateFromComponents(newComponent)
     func dateForBeginningOfDay(_ date: Date) -> Date {
-        let arr = ([Calendar.Component.year,.month,.day]) as Set<Calendar.Component>
-        let newComponent:DateComponents = self.dateComponents(arr, from: date, to: date)
+        let newComponent = dateComponents(([.year, .month, .day]), from: date)
         let newDate = self.date(from: newComponent)
         return newDate!
     }
@@ -47,17 +46,17 @@ extension Calendar{
         var components = DateComponents()
         components.day = 1
         let toDate = dateForBeginningOfDay(date)
-        let nextDay = self.date(byAdding: components, to: toDate)!
-        let endDay = nextDay.addingTimeInterval(-1)
+        let nextDay = self.date(byAdding: components, to: toDate, wrappingComponents: false)!
+//        let endDay = nextDay.dateByAddingTimeInterval(-1)
         return nextDay
     }
     
     func dateForEndOfFollowingWeekWithDate(_ date: Date) -> Date {
         let endOfWeek = dateForEndOfWeekWithDate(date)
         var nextWeekComponent = DateComponents()
-        nextWeekComponent.weekday = 1
-        let followingWeekDate = self.date(byAdding: nextWeekComponent, to: endOfWeek)!
-        return followingWeekDate
+        nextWeekComponent.weekOfYear = 1
+        let followingWeekDate = self.date(byAdding: nextWeekComponent, to: endOfWeek, wrappingComponents: false)
+        return followingWeekDate!
     }
 }
 
@@ -120,8 +119,7 @@ extension Calendar{
     }
     
     func yearMonthDayComponentsFromDate(_ date: Date) -> DateComponents {
-        let arr = ([Calendar.Component.year,.month,.day]) as Set<Calendar.Component>
-        let newComponents = self.dateComponents(arr, from: date, to: date)
+        let newComponents = dateComponents(([.year, .month, .day]), from: date)
         return newComponents
     }
     

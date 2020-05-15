@@ -566,7 +566,7 @@
 				TargetAttributes = {
 					261FA14D1941497E0029F589 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 2C4H9T5RF5;
+						DevelopmentTeam = C556M74S8M;
 					};
 					261FA15F1941497E0029F589 = {
 						CreatedOnToolsVersion = 6.0;
@@ -852,9 +852,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 2C4H9T5RF5;
+				DEVELOPMENT_TEAM = C556M74S8M;
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jinher.VIPER-SWIFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -868,9 +868,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 2C4H9T5RF5;
+				DEVELOPMENT_TEAM = C556M74S8M;
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jinher.VIPER-SWIFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";

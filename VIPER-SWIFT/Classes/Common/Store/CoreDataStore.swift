@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+///https://www.jianshu.com/p/3e793fca6a13
 extension Array {
     func lastObject() -> AnyObject {
         let endIndex = self.endIndex
@@ -46,6 +47,7 @@ class CoreDataStore : NSObject {
     }
     
     func fetchEntriesWithPredicate(_ predicate: NSPredicate, sortDescriptors: [NSSortDescriptor], completionBlock: (([ManagedTodoItem]) -> Void)!) {
+        //建立一个获取的请求
         let fetchRequest: NSFetchRequest<NSFetchRequestResult>  = NSFetchRequest(entityName: "TodoItem")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sortDescriptors
@@ -58,6 +60,7 @@ class CoreDataStore : NSObject {
     }
     
     func newTodoItem() -> ManagedTodoItem {
+        //建立一个entity
         let newEntry = NSEntityDescription.insertNewObject(forEntityName: "TodoItem", into: managedObjectContext) as! ManagedTodoItem
         
         return newEntry
@@ -66,7 +69,8 @@ class CoreDataStore : NSObject {
     func save() {
         do {
             try managedObjectContext.save()
-        } catch _ {
+        } catch let error {
+             print("error:\(error)")//捕捉到错误，处理错误
         }
     }
 }
