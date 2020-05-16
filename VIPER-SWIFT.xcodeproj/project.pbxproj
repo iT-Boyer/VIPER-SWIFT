@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2427C470F2FCFE8B7D1C63DF /* Pods_VIPER_SWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */; };
 		261FA1B919414A720029F589 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17219414A720029F589 /* AppDependencies.swift */; };
 		261FA1BC19414A720029F589 /* NSCalendar+CalendarAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17919414A720029F589 /* NSCalendar+CalendarAdditions.swift */; };
 		261FA1BE19414A720029F589 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17D19414A720029F589 /* Clock.swift */; };
@@ -136,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2427C470F2FCFE8B7D1C63DF /* Pods_VIPER_SWIFT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +670,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VIPER-SWIFTTests/Pods-VIPER-SWIFTTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RNCryptor-macOS/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor-macOS13.0/RNCryptor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
