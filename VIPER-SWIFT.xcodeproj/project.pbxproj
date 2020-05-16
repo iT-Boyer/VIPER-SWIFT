@@ -670,7 +670,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VIPER-SWIFTTests/Pods-VIPER-SWIFTTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RNCryptor-macOS13.0/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
