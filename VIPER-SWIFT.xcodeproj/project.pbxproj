@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2427C470F2FCFE8B7D1C63DF /* Pods_VIPER_SWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */; };
 		261FA1B919414A720029F589 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17219414A720029F589 /* AppDependencies.swift */; };
 		261FA1BC19414A720029F589 /* NSCalendar+CalendarAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17919414A720029F589 /* NSCalendar+CalendarAdditions.swift */; };
 		261FA1BE19414A720029F589 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17D19414A720029F589 /* Clock.swift */; };
@@ -64,6 +63,8 @@
 		26D96FB119429B1A00F117F5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18119414A720029F589 /* TodoItem.swift */; };
 		26D96FB219429B1A00F117F5 /* ListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A819414A720029F589 /* ListDataManager.swift */; };
 		80F01893A273341801A150C0 /* Pods_VIPER_SWIFTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29120966E805CF2DBBCB49C /* Pods_VIPER_SWIFTTests.framework */; };
+		F925866124722BB60031EC3E /* Pods_VIPER_SWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */; };
+		F925866224722BB60031EC3E /* Pods_VIPER_SWIFT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9A1F8FE246D05070005DF55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A1F8FD246D05070005DF55 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,20 @@
 			remoteInfo = "VIPER-SWIFT";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F925866324722BB60031EC3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F925866224722BB60031EC3E /* Pods_VIPER_SWIFT.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		117998271EA36808B5195D1F /* Pods_VIPER_SWIFT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_SWIFT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2427C470F2FCFE8B7D1C63DF /* Pods_VIPER_SWIFT.framework in Frameworks */,
+				F925866124722BB60031EC3E /* Pods_VIPER_SWIFT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +542,7 @@
 				261FA14A1941497E0029F589 /* Sources */,
 				261FA14B1941497E0029F589 /* Frameworks */,
 				261FA14C1941497E0029F589 /* Resources */,
+				F925866324722BB60031EC3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -897,6 +913,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -914,6 +931,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
