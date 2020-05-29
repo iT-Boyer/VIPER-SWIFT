@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bugly
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         appDependencies.installRootViewControllerIntoWindow(window: window!)
-        
+        Bugly.start(withAppId: "db3be14c17")
         return true
     }
 }
