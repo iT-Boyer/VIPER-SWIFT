@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         appDependencies.installRootViewControllerIntoWindow(window: window!)
-        Bugly.start(withAppId: "db3be14c17")
+        Bugly.start(withAppId: nil)
+        Bugly.setUserIdentifier("13500080001")
         return true
     }
 }
