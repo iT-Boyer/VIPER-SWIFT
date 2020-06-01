@@ -40,5 +40,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>BuglyAppIDString</key>
+	<string>db3be14c17</string>
+	<key>BuglyAppChannelString</key>
+	<string>zichahahhh</string>
+	<key>BuglyAppVersionString</key>
+	<string>1.0.0</string>
+	<key>BuglyDebugEnable</key>
+	<true/>
 </dict>
 </plist>
