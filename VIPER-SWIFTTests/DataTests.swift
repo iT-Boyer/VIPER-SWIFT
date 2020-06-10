@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import VIPER_SWIFT
+@testable import VIPER_SWIFT
 
 class DataTests: XCTestCase {
     var dataStore = CoreDataStore()
@@ -20,10 +20,10 @@ class DataTests: XCTestCase {
     }
     
     func testPerformance() {
-        self.measureBlock() {
+        self.measure() {
             let startDate = NSDate()
             let endDate = NSDate(timeIntervalSinceReferenceDate: 0)
-            self.dataManager.todoItemsBetweenStartDate(startDate, endDate: endDate, completion: { entries in
+            self.dataManager.todoItemsBetweenStartDate(startDate as Date, endDate: endDate as Date, completion: { entries in
                 
             })
         }

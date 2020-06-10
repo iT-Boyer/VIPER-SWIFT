@@ -1,13 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "calendar.png",
       "idiom" : "universal",
-      "filename" : "paper.png",
       "scale" : "1x"
     },
     {
+      "filename" : "calendar@2x.png",
       "idiom" : "universal",
-      "filename" : "paper@2x.png",
       "scale" : "2x"
     },
     {
@@ -16,7 +16,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

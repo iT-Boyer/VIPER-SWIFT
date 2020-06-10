@@ -1,7 +1,7 @@
 author: iTBoyer
-author_url: http://huos3203.github.io
-github_url: https://github.com/huos3203/VIPER-SWIFT
-root_url: https://github.com/huos3203/VIPER-SWIFT
+author_url: http://it-boyer.github.io
+github_url: https://github.com/it-boyer/VIPER-SWIFT
+root_url: https://github.com/it-boyer/VIPER-SWIFT
 output: docs/jazzy
 theme: fullwidth
 min_acl: internal

@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "261FA14D1941497E0029F589"
+               BlueprintIdentifier = "F927B7E924908ABF00A43044"
                BuildableName = "VIPER-SWIFT.app"
                BlueprintName = "VIPER-SWIFT"
-               ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "261FA15F1941497E0029F589"
-               BuildableName = "VIPER-SWIFTTests.xctest"
-               BlueprintName = "VIPER-SWIFTTests"
                ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "261FA15F1941497E0029F589"
+               BlueprintIdentifier = "F927B7FF24908AC100A43044"
                BuildableName = "VIPER-SWIFTTests.xctest"
                BlueprintName = "VIPER-SWIFTTests"
                ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
@@ -68,7 +54,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "261FA14D1941497E0029F589"
+            BlueprintIdentifier = "F927B7E924908ABF00A43044"
             BuildableName = "VIPER-SWIFT.app"
             BlueprintName = "VIPER-SWIFT"
             ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
@@ -85,7 +71,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "261FA14D1941497E0029F589"
+            BlueprintIdentifier = "F927B7E924908ABF00A43044"
             BuildableName = "VIPER-SWIFT.app"
             BlueprintName = "VIPER-SWIFT"
             ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
