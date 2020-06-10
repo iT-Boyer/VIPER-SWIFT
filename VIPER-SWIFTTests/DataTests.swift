@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import VIPER_SWIFT
 
 class DataTests: XCTestCase {
     var dataStore = CoreDataStore()
