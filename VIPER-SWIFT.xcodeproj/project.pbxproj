@@ -52,10 +52,21 @@
 		F927B87B24908DBE00A43044 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B87824908DBE00A43044 /* DataTests.swift */; };
 		F927B87C24908DBE00A43044 /* TODOSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B87924908DBE00A43044 /* TODOSpec.swift */; };
 		F927B87E24908E1000A43044 /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B87D24908E1000A43044 /* CalendarTests.swift */; };
+		F927BB862490D70B00A43044 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927BB852490D70B00A43044 /* APIClient.swift */; };
+		F927BB8B2490D73100A43044 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927BB882490D73100A43044 /* LoginViewController.swift */; };
+		F927BB8C2490D73100A43044 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927BB892490D73100A43044 /* DetailViewController.swift */; };
+		F927BB942490D77600A43044 /* VIPER_SWIFTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927BB932490D77600A43044 /* VIPER_SWIFTUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F927B80124908AC100A43044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F927B7E224908ABF00A43044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F927B7E924908ABF00A43044;
+			remoteInfo = "VIPER-SWIFT";
+		};
+		F927BB962490D77600A43044 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F927B7E224908ABF00A43044 /* Project object */;
 			proxyType = 1;
@@ -120,6 +131,12 @@
 		F927B87D24908E1000A43044 /* CalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		F927B88024908EAA00A43044 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F927B88124908EAA00A43044 /* VIPER.jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = VIPER.jazzy.yaml; sourceTree = "<group>"; };
+		F927BB852490D70B00A43044 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F927BB882490D73100A43044 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F927BB892490D73100A43044 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F927BB912490D77500A43044 /* VIPER-SWIFTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-SWIFTUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F927BB932490D77600A43044 /* VIPER_SWIFTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_SWIFTUITests.swift; sourceTree = "<group>"; };
+		F927BB952490D77600A43044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +153,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0421A056C029F07EF0D6A415 /* Pods_VIPER_SWIFTTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F927BB8E2490D77500A43044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +193,7 @@
 				F927B88124908EAA00A43044 /* VIPER.jazzy.yaml */,
 				F927B7EC24908ABF00A43044 /* VIPER-SWIFT */,
 				F927B80324908AC100A43044 /* VIPER-SWIFTTests */,
+				F927BB922490D77600A43044 /* VIPER-SWIFTUITests */,
 				F927B7EB24908ABF00A43044 /* Products */,
 				9E3A14BF7B45B0079744A9D3 /* Pods */,
 				82F882762EA4D737E117658D /* Frameworks */,
@@ -180,6 +205,7 @@
 			children = (
 				F927B7EA24908ABF00A43044 /* VIPER-SWIFT.app */,
 				F927B80024908AC100A43044 /* VIPER-SWIFTTests.xctest */,
+				F927BB912490D77500A43044 /* VIPER-SWIFTUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,10 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				F927B81024908BA800A43044 /* Common */,
-				F927B82124908BA800A43044 /* AppDependencies.swift */,
-				F927B7EF24908ABF00A43044 /* SceneDelegate.swift */,
-				F927B82224908BA800A43044 /* AppDelegate.swift */,
 				F927B82324908BA800A43044 /* Modules */,
+				F927B82224908BA800A43044 /* AppDelegate.swift */,
+				F927B7EF24908ABF00A43044 /* SceneDelegate.swift */,
+				F927B82124908BA800A43044 /* AppDependencies.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -286,6 +312,7 @@
 		F927B82324908BA800A43044 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F927BB7A2490D65800A43044 /* Login */,
 				F927B82424908BA800A43044 /* Add */,
 				F927B83824908BA800A43044 /* List */,
 			);
@@ -483,6 +510,105 @@
 			path = Quick;
 			sourceTree = "<group>";
 		};
+		F927BB7A2490D65800A43044 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F927BB852490D70B00A43044 /* APIClient.swift */,
+				F927BB882490D73100A43044 /* LoginViewController.swift */,
+				F927BB892490D73100A43044 /* DetailViewController.swift */,
+				F927BB802490D6BD00A43044 /* AppLogic */,
+				F927BB842490D6BD00A43044 /* ModuleInterface */,
+				F927BB7B2490D6BD00A43044 /* UserInterface */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F927BB7B2490D6BD00A43044 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				F927BB7C2490D6BD00A43044 /* Transition */,
+				F927BB7D2490D6BD00A43044 /* Presenter */,
+				F927BB7E2490D6BD00A43044 /* Wireframe */,
+				F927BB7F2490D6BD00A43044 /* Views */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		F927BB7C2490D6BD00A43044 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		F927BB7D2490D6BD00A43044 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F927BB7E2490D6BD00A43044 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		F927BB7F2490D6BD00A43044 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F927BB802490D6BD00A43044 /* AppLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F927BB812490D6BD00A43044 /* Manager */,
+				F927BB822490D6BD00A43044 /* Model */,
+				F927BB832490D6BD00A43044 /* Interactor */,
+			);
+			path = AppLogic;
+			sourceTree = "<group>";
+		};
+		F927BB812490D6BD00A43044 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F927BB822490D6BD00A43044 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F927BB832490D6BD00A43044 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F927BB842490D6BD00A43044 /* ModuleInterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModuleInterface;
+			sourceTree = "<group>";
+		};
+		F927BB922490D77600A43044 /* VIPER-SWIFTUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F927BB932490D77600A43044 /* VIPER_SWIFTUITests.swift */,
+				F927BB952490D77600A43044 /* Info.plist */,
+			);
+			path = "VIPER-SWIFTUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,6 +650,24 @@
 			productReference = F927B80024908AC100A43044 /* VIPER-SWIFTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F927BB902490D77500A43044 /* VIPER-SWIFTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F927BB982490D77600A43044 /* Build configuration list for PBXNativeTarget "VIPER-SWIFTUITests" */;
+			buildPhases = (
+				F927BB8D2490D77500A43044 /* Sources */,
+				F927BB8E2490D77500A43044 /* Frameworks */,
+				F927BB8F2490D77500A43044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F927BB972490D77600A43044 /* PBXTargetDependency */,
+			);
+			name = "VIPER-SWIFTUITests";
+			productName = "VIPER-SWIFTUITests";
+			productReference = F927BB912490D77500A43044 /* VIPER-SWIFTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -538,6 +682,10 @@
 						CreatedOnToolsVersion = 11.5;
 					};
 					F927B7FF24908AC100A43044 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = F927B7E924908ABF00A43044;
+					};
+					F927BB902490D77500A43044 = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = F927B7E924908ABF00A43044;
 					};
@@ -558,6 +706,7 @@
 			targets = (
 				F927B7E924908ABF00A43044 /* VIPER-SWIFT */,
 				F927B7FF24908AC100A43044 /* VIPER-SWIFTTests */,
+				F927BB902490D77500A43044 /* VIPER-SWIFTUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -574,6 +723,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F927B7FE24908AC100A43044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F927BB8F2490D77500A43044 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -675,10 +831,12 @@
 				F927B84E24908BA900A43044 /* TodoItem.swift in Sources */,
 				F927B85724908BA900A43044 /* AppDependencies.swift in Sources */,
 				F927B86324908BA900A43044 /* ListModuleInterface.swift in Sources */,
+				F927BB8B2490D73100A43044 /* LoginViewController.swift in Sources */,
 				F927B85A24908BA900A43044 /* AddModuleDelegateInterface.swift in Sources */,
 				F927B85C24908BA900A43044 /* AddInteractor.swift in Sources */,
 				F927B86C24908BA900A43044 /* UpcomingDisplaySection.swift in Sources */,
 				F927B85924908BA900A43044 /* AddModuleInterface.swift in Sources */,
+				F927BB8C2490D73100A43044 /* DetailViewController.swift in Sources */,
 				F927B86824908BA900A43044 /* UpcomingDisplayDataCollection.swift in Sources */,
 				F927B85124908BA900A43044 /* NSCalendar+CalendarAdditions.swift in Sources */,
 				F927B86924908BA900A43044 /* UpcomingDisplayItem.swift in Sources */,
@@ -686,6 +844,7 @@
 				F927B86224908BA900A43044 /* AddViewInterface.swift in Sources */,
 				F927B86B24908BA900A43044 /* UpcomingDisplayData.swift in Sources */,
 				F927B7F024908ABF00A43044 /* SceneDelegate.swift in Sources */,
+				F927BB862490D70B00A43044 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +860,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F927BB8D2490D77500A43044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F927BB942490D77600A43044 /* VIPER_SWIFTUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -708,6 +875,11 @@
 			isa = PBXTargetDependency;
 			target = F927B7E924908ABF00A43044 /* VIPER-SWIFT */;
 			targetProxy = F927B80124908AC100A43044 /* PBXContainerItemProxy */;
+		};
+		F927BB972490D77600A43044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F927B7E924908ABF00A43044 /* VIPER-SWIFT */;
+			targetProxy = F927BB962490D77600A43044 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -917,6 +1089,42 @@
 			};
 			name = Release;
 		};
+		F927BB992490D77600A43044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VIPER-SWIFTUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hsg.iTBoyer.VIPER-SWIFTUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VIPER-SWIFT";
+			};
+			name = Debug;
+		};
+		F927BB9A2490D77600A43044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VIPER-SWIFTUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hsg.iTBoyer.VIPER-SWIFTUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VIPER-SWIFT";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -943,6 +1151,15 @@
 			buildConfigurations = (
 				F927B80D24908AC100A43044 /* Debug */,
 				F927B80E24908AC100A43044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F927BB982490D77600A43044 /* Build configuration list for PBXNativeTarget "VIPER-SWIFTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F927BB992490D77600A43044 /* Debug */,
+				F927BB9A2490D77600A43044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

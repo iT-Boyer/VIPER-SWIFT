@@ -38,6 +38,16 @@
                ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F927BB902490D77500A43044"
+               BuildableName = "VIPER-SWIFTUITests.xctest"
+               BlueprintName = "VIPER-SWIFTUITests"
+               ReferencedContainer = "container:VIPER-SWIFT.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
