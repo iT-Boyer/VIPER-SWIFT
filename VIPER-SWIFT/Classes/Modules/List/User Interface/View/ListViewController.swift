@@ -39,10 +39,12 @@ class ListViewController : UITableViewController, ListViewInterface {
         navigationItem.rightBarButtonItem = addItem
     }
     
+    //MARK: - UIAction 抽象接口
     @objc func didTapAddButton () {
         eventHandler?.addNewEntry()
     }
     
+    //MARK: - View 接口代理
     func showNoContentMessage() {
         view = noContentView
     }
@@ -57,7 +59,7 @@ class ListViewController : UITableViewController, ListViewInterface {
     func reloadEntries() {
         tableView.reloadData()
     }
-    
+    //MARK: - tableview 代理
     override func numberOfSections(in tableView: UITableView) -> Int  {
         var numberOfSections = dataProperty?.sections.count
         

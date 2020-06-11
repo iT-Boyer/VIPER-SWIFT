@@ -137,6 +137,7 @@
 		F927BB912490D77500A43044 /* VIPER-SWIFTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-SWIFTUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F927BB932490D77600A43044 /* VIPER_SWIFTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_SWIFTUITests.swift; sourceTree = "<group>"; };
 		F927BB952490D77600A43044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F927BBAB2492230D00A43044 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +333,7 @@
 		F927B82524908BA800A43044 /* Module Interface */ = {
 			isa = PBXGroup;
 			children = (
+				F927BBAB2492230D00A43044 /* README.md */,
 				F927B82624908BA800A43044 /* AddModuleInterface.swift */,
 				F927B82724908BA800A43044 /* AddModuleDelegateInterface.swift */,
 			);
@@ -620,6 +622,7 @@
 				F927B7E624908ABF00A43044 /* Sources */,
 				F927B7E724908ABF00A43044 /* Frameworks */,
 				F927B7E824908ABF00A43044 /* Resources */,
+				0913438EF8D0CC0204F2E965 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -739,6 +742,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0913438EF8D0CC0204F2E965 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VIPER-SWIFT/Pods-VIPER-SWIFT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VIPER-SWIFT/Pods-VIPER-SWIFT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VIPER-SWIFT/Pods-VIPER-SWIFT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0964578B15EAF4F04486F6E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

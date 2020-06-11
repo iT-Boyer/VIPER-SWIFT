@@ -8,6 +8,7 @@
 
 import Foundation
 
+//定义了模块可以做什么
 protocol AddModuleInterface {
     func cancelAddAction()
     func saveAddActionWithName(name: NSString, dueDate: Date)

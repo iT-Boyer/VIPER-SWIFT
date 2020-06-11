@@ -8,6 +8,7 @@
 
 import Foundation
 
+//描述该模块做了什么
 protocol AddModuleDelegate {
     func addModuleDidCancelAddAction()
     func addModuleDidSaveAddAction()

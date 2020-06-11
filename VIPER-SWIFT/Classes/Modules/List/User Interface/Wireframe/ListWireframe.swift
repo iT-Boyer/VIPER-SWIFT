@@ -19,8 +19,10 @@ class ListWireframe : NSObject {
     
     func presentListInterfaceFromWindow(window: UIWindow) {
         let viewController = listViewControllerFromStoryboard()
+        // 赋值用例接口对象：在VC中通过用例接口对象（及展示器）来实现UI跳转逻辑
         viewController.eventHandler = listPresenter
         listViewController = viewController
+        // 赋值view接口对象：在展示器通过view接口对象（及VC）更新UI
         listPresenter!.userInterface = viewController
         rootWireframe?.showRootViewController(viewController: viewController, inWindow: window)
     }
