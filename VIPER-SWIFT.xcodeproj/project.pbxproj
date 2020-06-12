@@ -25,7 +25,6 @@
 		F927B85724908BA900A43044 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82124908BA800A43044 /* AppDependencies.swift */; };
 		F927B85824908BA900A43044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82224908BA800A43044 /* AppDelegate.swift */; };
 		F927B85924908BA900A43044 /* AddModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82624908BA800A43044 /* AddModuleInterface.swift */; };
-		F927B85A24908BA900A43044 /* AddModuleDelegateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82724908BA800A43044 /* AddModuleDelegateInterface.swift */; };
 		F927B85B24908BA900A43044 /* AddDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82A24908BA800A43044 /* AddDataManager.swift */; };
 		F927B85C24908BA900A43044 /* AddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82C24908BA800A43044 /* AddInteractor.swift */; };
 		F927B85D24908BA900A43044 /* AddPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927B82F24908BA800A43044 /* AddPresentationTransition.swift */; };
@@ -102,7 +101,6 @@
 		F927B82124908BA800A43044 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		F927B82224908BA800A43044 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F927B82624908BA800A43044 /* AddModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModuleInterface.swift; sourceTree = "<group>"; };
-		F927B82724908BA800A43044 /* AddModuleDelegateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModuleDelegateInterface.swift; sourceTree = "<group>"; };
 		F927B82A24908BA800A43044 /* AddDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataManager.swift; sourceTree = "<group>"; };
 		F927B82C24908BA800A43044 /* AddInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInteractor.swift; sourceTree = "<group>"; };
 		F927B82F24908BA800A43044 /* AddPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPresentationTransition.swift; sourceTree = "<group>"; };
@@ -254,6 +252,7 @@
 				F927B81624908BA800A43044 /* Categories */,
 				F927B81824908BA800A43044 /* Clock */,
 				F927B81B24908BA800A43044 /* Store */,
+				F9A53E792493131900874D43 /* Server */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -335,7 +334,6 @@
 			children = (
 				F927BBAB2492230D00A43044 /* README.md */,
 				F927B82624908BA800A43044 /* AddModuleInterface.swift */,
-				F927B82724908BA800A43044 /* AddModuleDelegateInterface.swift */,
 			);
 			path = "Module Interface";
 			sourceTree = "<group>";
@@ -515,7 +513,6 @@
 		F927BB7A2490D65800A43044 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F927BB852490D70B00A43044 /* APIClient.swift */,
 				F927BB882490D73100A43044 /* LoginViewController.swift */,
 				F927BB892490D73100A43044 /* DetailViewController.swift */,
 				F927BB802490D6BD00A43044 /* AppLogic */,
@@ -609,6 +606,14 @@
 				F927BB952490D77600A43044 /* Info.plist */,
 			);
 			path = "VIPER-SWIFTUITests";
+			sourceTree = "<group>";
+		};
+		F9A53E792493131900874D43 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				F927BB852490D70B00A43044 /* APIClient.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -852,7 +857,6 @@
 				F927B85724908BA900A43044 /* AppDependencies.swift in Sources */,
 				F927B86324908BA900A43044 /* ListModuleInterface.swift in Sources */,
 				F927BB8B2490D73100A43044 /* LoginViewController.swift in Sources */,
-				F927B85A24908BA900A43044 /* AddModuleDelegateInterface.swift in Sources */,
 				F927B85C24908BA900A43044 /* AddInteractor.swift in Sources */,
 				F927B86C24908BA900A43044 /* UpcomingDisplaySection.swift in Sources */,
 				F927B85924908BA900A43044 /* AddModuleInterface.swift in Sources */,
