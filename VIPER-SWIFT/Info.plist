@@ -48,5 +48,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>Bugly</key>
+	<dict>
+		<key>BUGLY_APP_ID</key>
+		<string>24a53f0561</string>
+		<key>BUGLY_APP_KEY</key>
+		<string>76ec247e-049d-4c3f-8388-6d4f78b97143</string>
+	</dict>
 </dict>
 </plist>
